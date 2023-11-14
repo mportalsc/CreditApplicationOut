@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+ <style>
+  .container {
+   margin: 0 auto !important;
+   width: 80%;
+  }
+ </style>
+  <script src="https://acimacredit--partial.sandbox.my.site.com/retailer/lightning/lightning.out.js"></script>
+  
+  <div data-lightning-out="true" class="container"></div>
+  
+  <script>
+    const appName = 'c:creditApplication';
+    const componentName = 'c:lwcCreditApplication';
+    const lightningEndpoint = 'https://acimacredit--partial.sandbox.my.site.com/retailer/';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+    };
+      
+      $Lightning.use(
+        appName,
+        function () {
+          $Lightning.createComponent(
+            componentName,
+            componentAttributes,
+            targetElement,
+            function (cmp) {
+                console.log("LWC component created.");
+              // callback when component is created and active on the page
+            }
+          );
+        },
+        lightningEndpoint
+      );
+    </script>
+  
+</html>
